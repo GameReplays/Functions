@@ -24,3 +24,23 @@ function clamp($value, $min, $max)
 {
     return max($min, min($value, $max));
 }
+
+/**
+ * Always rounds the given float up to the highest integer, and casts to int
+ * @param int|float $value
+ * @return int
+ */
+function roundUp($value)
+{
+    return (int)ceil($value);
+}
+
+/**
+ * Always rounds the given float down to the lowest integer, and casts to int
+ * @param int|float $value
+ * @return int
+ */
+function roundDown($value)
+{
+    return (int)floor($value);
+}
