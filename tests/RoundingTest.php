@@ -1,6 +1,7 @@
 <?php
 
 use function GameReplays\Functions\roundDown;
+use function GameReplays\Functions\roundInt;
 use function GameReplays\Functions\roundUp;
 
 class RoundingTest extends PHPUnit_Framework_TestCase
@@ -27,5 +28,17 @@ class RoundingTest extends PHPUnit_Framework_TestCase
     {
         $rounded = roundDown(3);
         $this->assertSame($rounded, 3);
+    }
+
+    public function test_rounds_int_down_if_less_than_half()
+    {
+        $rounded = roundInt(3.14);
+        $this->assertSame($rounded, 3);
+    }
+
+    public function test_rounds_int_down_if_half()
+    {
+        $rounded = roundInt(3.5);
+        $this->assertSame($rounded, 4);
     }
 }

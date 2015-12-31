@@ -44,3 +44,13 @@ function roundDown($value)
 {
     return (int)floor($value);
 }
+
+/**
+ * Normal rounding, but casts to an int instead of float like normal PHP round
+ * @param int|float $value
+ * @return int
+ */
+function roundInt($value)
+{
+    return (int)round($value);
+}
